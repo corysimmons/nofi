@@ -33,14 +33,18 @@ var flagger = function flagger() {
   if (cli.flags.saveOptional) return '--save-optional ' + cli.flags.saveOptional;
 };
 
+var otherPkgs = function otherPkgs() {
+  if (cli.input) return ' ' + cli.input.join(' ');
+};
+
 (0, _isOnline2.default)(function (err, yup) {
   if (err) throw err;
 
   if (yup) {
     console.log(_chalk2.default.bold.green('Online.') + ' nofi will attempt to force an install from the internet. Ignore npm\'s cryptic warning.');
-    _child_process2.default.execSync('npm install --force ' + flagger());
+    _child_process2.default.execSync('npm install --force ' + flagger() + otherPkgs());
   } else {
     console.log(_chalk2.default.bold.red('Not online.') + ' nofi will attempt to install from cache, but can\'t guarantee you have this package.');
-    _child_process2.default.execSync('npm install --cache-min Infinity ' + flagger());
+    _child_process2.default.execSync('npm install --cache-min Infinity ' + flagger() + otherPkgs());
   }
 });

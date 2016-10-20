@@ -1,6 +1,6 @@
 {
   "name": "nofi",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "license": "MIT",
   "description": "If you're online, it installs/caches npm packages with --force (so you get fresh packages). If you're offline, it installs cached packages with --cache-min.",
   "main": "./cli.js",
@@ -32,5 +32,10 @@
     "babel-preset-stage-0": "^6.16.0",
     "eslint": "^3.8.1",
     "standard": "^8.4.0"
+  },
+  "optionalDependencies": {
+    "jeet": "^6.1.5",
+    "lost": "^7.1.0",
+    "postcss-ant": "^0.1.4"
   }
 }

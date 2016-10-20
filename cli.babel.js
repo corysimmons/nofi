@@ -30,14 +30,18 @@ const flagger = () => {
   if (cli.flags.saveOptional) return `--save-optional ${cli.flags.saveOptional}`
 }
 
+const otherPkgs = () => {
+  if (cli.input) return ` ${cli.input.join(' ')}`
+}
+
 isOnline((err, yup) => {
   if (err) throw err
 
   if (yup) {
     console.log(`${chalk.bold.green('Online.')} nofi will attempt to force an install from the internet. Ignore npm's cryptic warning.`)
-    childProcess.execSync(`npm install --force ${flagger()}`)
+    childProcess.execSync(`npm install --force ${flagger()}${otherPkgs()}`)
   } else {
     console.log(`${chalk.bold.red('Not online.')} nofi will attempt to install from cache, but can't guarantee you have this package.`)
-    childProcess.execSync(`npm install --cache-min Infinity ${flagger()}`)
+    childProcess.execSync(`npm install --cache-min Infinity ${flagger()}${otherPkgs()}`)
   }
 })

@@ -12,6 +12,10 @@ Do you switch between online/offline environments somewhat regularly?
 ### Examples
 
 ```fish
+✖︎  npm install
+✔︎  nofi
+```
+```fish
 ✖︎  npm install --save foo
 ✔︎  nofi --save foo
 ```
@@ -24,11 +28,11 @@ Do you switch between online/offline environments somewhat regularly?
 ✔︎  nofi --save-optional foo
 ```
 
-Flag aliases work as well...
+Flag aliases and installing multiple packages work as well...
 
 - `nofi -S foo`
-- `nofi -D foo`
-- `nofi -O foo`
+- `nofi -D foo bar`
+- `nofi -O foo bar baz`
 
 ### How does it work?
 
