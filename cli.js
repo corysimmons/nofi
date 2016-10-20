@@ -19,11 +19,12 @@ var _chalk2 = _interopRequireDefault(_chalk);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var cli = (0, _meow2.default)('\n  Usage\n    $ nofi [flag] [npm-package]\n\n  Options\n    --save, -S\n    --save-dev, -D\n    --save-optional, -O\n\n  Examples\n    $ nofi -D some-npm-package\n', {
+var cli = (0, _meow2.default)('\n  Usage\n    $ nofi [flag] [npm-package]\n\n  Options\n    --save, -S\n    --save-dev, -D\n    --save-optional, -O\n    --global, -g\n\n  Examples\n    $ nofi -D some-npm-package\n', {
   alias: {
     S: 'save',
     D: 'save-dev',
-    O: 'save-optional'
+    O: 'save-optional',
+    g: 'global'
   }
 });
 
@@ -31,6 +32,7 @@ var flagger = function flagger() {
   if (cli.flags.save) return '--save ' + cli.flags.save;
   if (cli.flags.saveDev) return '--save-dev ' + cli.flags.saveDev;
   if (cli.flags.saveOptional) return '--save-optional ' + cli.flags.saveOptional;
+  if (cli.flags.global) return '--global ' + cli.flags.global;
 };
 
 var otherPkgs = function otherPkgs() {

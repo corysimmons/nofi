@@ -13,6 +13,7 @@ const cli = meow(`
     --save, -S
     --save-dev, -D
     --save-optional, -O
+    --global, -g
 
   Examples
     $ nofi -D some-npm-package
@@ -20,7 +21,8 @@ const cli = meow(`
   alias: {
     S: 'save',
     D: 'save-dev',
-    O: 'save-optional'
+    O: 'save-optional',
+    g: 'global'
   }
 })
 
@@ -28,6 +30,7 @@ const flagger = () => {
   if (cli.flags.save) return `--save ${cli.flags.save}`
   if (cli.flags.saveDev) return `--save-dev ${cli.flags.saveDev}`
   if (cli.flags.saveOptional) return `--save-optional ${cli.flags.saveOptional}`
+  if (cli.flags.global) return `--global ${cli.flags.global}`
 }
 
 const otherPkgs = () => {
