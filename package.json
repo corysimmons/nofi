@@ -1,6 +1,6 @@
 {
   "name": "nofi",
-  "version": "0.0.1-beta",
+  "version": "1.0.0",
   "license": "MIT",
   "description": "If you're online, it installs/caches npm packages with --force (so you get fresh packages). If you're offline, it installs cached packages with --cache-min.",
   "author": "Cory Simmons <github.cory@mailhero.io>",
