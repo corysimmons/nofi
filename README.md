@@ -1,5 +1,7 @@
 # nofi
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/corysimmons/nofi.svg)](https://greenkeeper.io/)
+
 **npm Online-First Installer**
 
 Do you switch between online/offline environments somewhat regularly?
